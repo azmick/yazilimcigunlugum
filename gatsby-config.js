@@ -9,15 +9,15 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Yazılımcı Günlüğüm`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Azmi Çağrı Karakaya`,
+      summary: `Yazılım dünyasında öğrendiklerimi anlatarak aktarmaya çalışıyorum.`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `IchCugrii`,
     },
   },
   plugins: [
