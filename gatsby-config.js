@@ -12,12 +12,12 @@ module.exports = {
     title: `Yazılımcı Günlüğüm`,
     author: {
       name: `Azmi Çağrı Karakaya`,
-      summary: `Yazılım dünyasında öğrendiklerimi anlatarak aktarmaya çalışıyorum.`,
+      summary: `Yazılım dünyasında öğrenmek istediklerimi anlatarak öğrenmeye çalışıyorum.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
       twitter: `IchCugrii`,
+      github: `azmick`,
+      linkedin: `acagrik`
     },
   },
   plugins: [

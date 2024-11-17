@@ -1,13 +1,8 @@
-/**
- * Bio component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
- */
-
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+// React-Icons'dan sosyal medya ikonlarını import ediyoruz
+import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa"
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -20,37 +15,66 @@ const Bio = () => {
           }
           social {
             twitter
+            linkedin
+            github
           }
         }
       }
     }
   `)
 
-  // Set these values by editing "siteMetadata" in gatsby-config.js
   const author = data.site.siteMetadata?.author
   const social = data.site.siteMetadata?.social
 
   return (
-    <div className="bio">
+    <div className="bio" style={{ display: "flex", alignItems: "center" }}>
       <StaticImage
         className="bio-avatar"
         layout="fixed"
         formats={["auto", "webp", "avif"]}
-        src="../images/profile-pic.png"
-        width={50}
-        height={50}
-        quality={95}
+        src="../images/blog-profile-pic.jpg"
+        width={125} // Görselin genişliği artırıldı
+        height={100} // Görselin yüksekliği artırıldı
+        quality={100}
         alt="Profile picture"
+        style={{ borderRadius: "50%" }} // Görseli yuvarlak yapmak için
       />
-      {author?.name && (
-        <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}
-          {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
-            You should follow them on Twitter
-          </a>
-        </p>
-      )}
+      <div style={{ marginLeft: "15px" }}>
+        {author?.name && <strong style={{ display: "block" }}>{author.name}</strong>}
+        {author?.summary && <p style={{ margin: 0 }}>{author.summary}</p>}
+        <div style={{ marginTop: "10px", display: "flex", gap: "15px" }}>
+          {social?.twitter && (
+            <a
+              href={`https://twitter.com/${social.twitter}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+            >
+              <FaTwitter size={24} style={{ color: "#1DA1F2" }} />
+            </a>
+          )}
+          {social?.linkedin && (
+            <a
+              href={`https://linkedin.com/in/${social.linkedin}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin size={24} style={{ color: "#0077B5" }} />
+            </a>
+          )}
+          {social?.github && (
+            <a
+              href={`https://github.com/${social.github}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <FaGithub size={24} style={{ color: "#333" }} />
+            </a>
+          )}
+        </div>
+      </div>
     </div>
   )
 }
