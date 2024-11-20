@@ -1,5 +1,5 @@
 ---
-title: "Basit Bir NGINX Sunucusu Oluşturmak"
+title: Basit Bir NGINX Sunucusu Oluşturmak
 date: "2024-11-19"
 description: "Docker kullanarak basit bir NGINX sunucusu oluşturma ve yönetme adımları."
 ---
