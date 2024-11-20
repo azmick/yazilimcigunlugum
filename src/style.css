@@ -79,6 +79,25 @@ body {
   font-family: var(--font-body);
   font-size: var(--fontSize-1);
   color: var(--color-text);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Light Tema */
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Dark Tema */
+body.dark {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Sistem Teması */
+body.system {
+  background-color: #f0f0f0;
+  color: #333333;
 }
 
 footer {
