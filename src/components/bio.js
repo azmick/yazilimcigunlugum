@@ -1,8 +1,6 @@
-import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-// React-Icons'dan sosyal medya ikonlarını import ediyoruz
-import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa"
+import * as React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -21,36 +19,39 @@ const Bio = () => {
         }
       }
     }
-  `)
+  `);
 
-  const author = data.site.siteMetadata?.author
-  const social = data.site.siteMetadata?.social
+  const author = data.site.siteMetadata?.author;
+  const social = data.site.siteMetadata?.social;
 
   return (
     <div className="bio" style={{ display: "flex", alignItems: "center" }}>
+      {/* Profil Resmi */}
       <StaticImage
         className="bio-avatar"
         layout="fixed"
         formats={["auto", "webp", "avif"]}
         src="../images/blog-profile-pic.jpg"
-        width={125} // Görselin genişliği artırıldı
-        height={100} // Görselin yüksekliği artırıldı
+        width={125}
+        height={100}
         quality={100}
         alt="Profile picture"
-        style={{ borderRadius: "50%" }} // Görseli yuvarlak yapmak için
+        style={{ borderRadius: "50%" }}
       />
       <div style={{ marginLeft: "15px" }}>
         {author?.name && <strong style={{ display: "block" }}>{author.name}</strong>}
         {author?.summary && <p style={{ margin: 0 }}>{author.summary}</p>}
-        <div style={{ marginTop: "10px", display: "flex", gap: "15px" }}>
+
+        {/* Sosyal Medya Linkleri */}
+        <div style={{ marginTop: "10px", display: "flex", flexDirection: "row", gap: "5px" }}>
           {social?.twitter && (
             <a
               href={`https://twitter.com/${social.twitter}`}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Twitter"
+              style={{ color: "#0077B5"  }}
             >
-              <FaTwitter size={24} style={{ color: "#1DA1F2" }} />
+              X
             </a>
           )}
           {social?.linkedin && (
@@ -58,9 +59,9 @@ const Bio = () => {
               href={`https://linkedin.com/in/${social.linkedin}`}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LinkedIn"
+              style={{ color: "#0077B5" }}
             >
-              <FaLinkedin size={24} style={{ color: "#0077B5" }} />
+              LinkedIn
             </a>
           )}
           {social?.github && (
@@ -68,15 +69,15 @@ const Bio = () => {
               href={`https://github.com/${social.github}`}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="GitHub"
+              style={{ color: "#0077B5" }}
             >
-              <FaGithub size={24} style={{ color: "#333" }} />
+              GitHub
             </a>
           )}
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Bio
+export default Bio;

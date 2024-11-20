@@ -4,7 +4,6 @@ date: "2024-11-19"
 description: "Docker kullanarak basit bir NGINX sunucusu oluşturma ve yönetme adımları."
 ---
 
-## Basit Bir NGINX Sunucusu Oluşturmak
 
 Docker, konteyner tabanlı uygulama geliştirme ve yönetme için harika bir araçtır. Bu yazıda, basit bir NGINX sunucusu oluşturmayı ve yönetmeyi öğreneceğiz.
 
